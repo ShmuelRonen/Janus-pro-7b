@@ -8,7 +8,6 @@ import numpy as np
 import os
 import time
 from Upsample import RealESRGAN
-import spaces
 import random
 
 # Load model and processor
@@ -33,7 +32,6 @@ sr_model = RealESRGAN(torch.device('cuda' if torch.cuda.is_available() else 'cpu
 sr_model.load_weights(f'weights/RealESRGAN_x2.pth', download=False)
 
 @torch.inference_mode()
-@spaces.GPU(duration=120) 
 def multimodal_understanding(image, question, seed, top_p, temperature):
     # Clear CUDA cache before generating
     torch.cuda.empty_cache()
@@ -129,7 +127,6 @@ def unpack(dec, width, height, parallel_size=5):
     return visual_img
 
 @torch.inference_mode()
-@spaces.GPU(duration=120)
 def generate_image(prompt,
                    seed=None,
                    guidance=5,
@@ -172,7 +169,6 @@ def generate_image(prompt,
         print(f'processing time: {time.time() - stime}')
         return ret_images
 
-@spaces.GPU(duration=60)
 def image_upsample(img: Image.Image) -> Image.Image:
     if img is None:
         raise Exception("Image not uploaded")
