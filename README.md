@@ -54,7 +54,7 @@
    - Visit the Hugging Face model page: [RealESRGAN_x2.pth](https://huggingface.co/ai-forever/Real-ESRGAN/blob/main/RealESRGAN_x2.pth).
    - Download the `RealESRGAN_x2.pth` file.
    - Place the downloaded file in the `weights` folder inside the project directory.
-   - 
+     
 5. The pre-trained model weights will download automatic in first run.
 
 ### Running the Application
