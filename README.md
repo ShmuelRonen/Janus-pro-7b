@@ -42,8 +42,8 @@
 
 2. Create a Conda environment:
    ```bash
-   conda create -n janus_pro_7b_env python=3.9
-   conda activate janus_pro_7b_env
+   conda create -n janus_pro python=3.9
+   conda activate janus_pro
    ```
 
 3. Install dependencies:
